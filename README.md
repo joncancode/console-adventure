@@ -14,11 +14,11 @@ You're able to choose your own Pokemon, each with its own abilities. There is ev
 
 This uses strictly Python.
 
-##See it in action
+## See it in action
 
 ![Pokemon screenshot](/images/poke-python.gif?raw=true "Pokemon")
 
-##Try it yourself
+## Try it yourself
 
 Clone this repository 
 

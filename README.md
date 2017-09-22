@@ -24,23 +24,15 @@ Clone this repository
 
 ``` git clone https://github.com/joncancode/console-adventure.git```
 
-In order to run this, it would be best to create a virtual environment.
+In order to run this, it would be best to create a virtual environment (but not necessary).
 
 ```python3 -m venv env```
 
-```mkdir adventure```
-
-```cd adventure```
-
-get started with git
-```git init```
-
-```adventure/env```
-
-```echo env >> .gitignore```
-
-activate the environment any time you want to play
+to activate the environment
 ```source env/bin/activate```
+
+to play the game, run:
+```python3 game.py```
 
 then deactivate in the console when you are done
 ```deactivate```

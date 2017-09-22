@@ -2,6 +2,9 @@ import time
 import datetime
 import os
 
+# to get rid of sleep pauses
+# time.sleep = lambda t: None
+
 print("\033[2J\033[0;0H")
 print("\t****************************")
 print("\t****************************")
@@ -30,8 +33,8 @@ Made in \033[1;33mPython\033[0m to feed your nostalgia!
 
 time.sleep(1)
 
-def main():
-    startGame()
+# def main():
+#     startGame()
 
 def startGame():
     input('Press enter to begin...')
@@ -41,7 +44,6 @@ pikachu = '\033[1;33mPikachu\033[0m'
 bulbasaur = '\033[1;32mBulbasaur\033[0m' 
 charmander = '\033[1;31mCharmander\033[0m' 
 squirtle = '\033[1;36mSquirtle\033[0m'
-newL = '\n'
 # late = False
 myPokemon = 'CHANGE'
 garyPokemon = 'CHANGE'
@@ -69,12 +71,11 @@ elif dayOfWeek == 4:
 elif dayOfWeek == 5:
     day = 'Saturday'
 elif dayOfWeek == 6:
-
     day = 'Sunday'
 
 
-#
 
+#
 
 def lose():
     print("""\
@@ -95,20 +96,20 @@ def leaveTown(myPokemon):
 
 def winBattle(myPokemon, garyPokemon):
     time.sleep(1)
-    print(f"{newL}{myPokemon} is victorious!{newL}")
+    print(f"\n{myPokemon} is victorious!\n")
     time.sleep(1)
-    print(f"Gary and his {garyPokemon} leave upset. The professor congratulates you and you are on your way to become a master.{newL}")
+    print(f"Gary and his {garyPokemon} leave upset. The professor congratulates you and you are on your way to become a master.\n")
     time.sleep(1)
     input(f"Press enter to continue...")
     leaveTown(myPokemon)
 
 def loseBattle(myPokemon, garyPokemon):
     time.sleep(1)
-    print(f"{newL}Gary's {garyPokemon} counters with a Body Slam, causing {myPokemon} to faint. You lose!{newL}")
+    print(f"\nGary's {garyPokemon} counters with a Body Slam, causing {myPokemon} to faint. You lose!\n")
     time.sleep(1)
-    print(f"Gary and his {garyPokemon} leave happily. The professor congratulates you and you are on your way to become a master.{newL}")
+    print(f"Gary and his {garyPokemon} leave happily. The professor congratulates you and you are on your way to become a master.\n")
     time.sleep(1)
-    print(f"Oak: You have a long way to go {myName}, but keep training. You will one day be a master.{newL}")
+    print(f"Oak: You have a long way to go {myName}, but keep training. You will one day be a master.\n")
     time.sleep(1)
     input(f"Press enter to continue...")
     leaveTown(myPokemon)
@@ -130,9 +131,9 @@ def garyBattle(myPokemon, garyPokemon):
     print('__  __  |_  /| |_  /  __  /  __  / __  __/   ')  
     print('_  /_/ /_  ___ |  /   _  /   _  /___  /___   ')
     print('/_____/ /_/  |_/_/    /_/    /_____/_____/   \n') 
-    print(f'      {myPokemon} versus {garyPokemon}     {newL}') 
+    print(f'      {myPokemon} versus {garyPokemon}     \n') 
     time.sleep(1)
-    firstAttack = input(f'{choicePrompt} {newL} {choice1} Tackle {newL} {choice2} Growl {newL} {choice3} {specialMove} {newL} {choice4} {specialMove2} {newL}' )
+    firstAttack = input(f'{choicePrompt} \n {choice1} Tackle \n {choice2} Growl \n {choice3} {specialMove} \n {choice4} {specialMove2} \n' )
     if firstAttack == '1':
         print(f"{myPokemon} tackles Gary's {garyPokemon} and inflicts damage.")
         winBattle(myPokemon, garyPokemon)
@@ -151,7 +152,7 @@ def garyChallenge(myPokemon, garyPokemon):
     time.sleep(1)
     print(f'Gary: Before I go become the best trainer around, I want my {garyPokemon} to take out your puny {myPokemon}. Ready, {myName}?')
     time.sleep(1)
-    input(f"{newL}Press enter to continue...")
+    input(f"\nPress enter to continue...")
     garyBattle(myPokemon, garyPokemon)
 
 #Choice 4: Gary's Pokemon
@@ -163,16 +164,16 @@ def garyChooses(myPokemon, garyPokemon):
         garyPokemon = squirtle
     elif myPokemon == squirtle: 
         garyPokemon = bulbasaur
-    print(f"Gary: Pshh.. And now that you've chosen {myPokemon}, I'll take the real best Pokemon.{newL}")
+    print(f"Gary: Pshh.. And now that you've chosen {myPokemon}, I'll take the real best Pokemon.\n")
     time.sleep(1)
-    print(f"Gary chooses {garyPokemon}.{newL}")
+    print(f"Gary chooses {garyPokemon}.\n")
     time.sleep(2)
-    print(f"Gary: {garyPokemon}, welcome to the All Star team.{newL}")
+    print(f"Gary: {garyPokemon}, welcome to the All Star team.\n")
     garyChallenge(myPokemon, garyPokemon)
 
 #Choice 3: Choose your Pokemon
 def choosePokemon(myPokemon):
-    choosePoke = input(f'{choicePrompt} {newL} {choice1} The grass type {bulbasaur} {newL} {choice2} The fire type {charmander} {newL} {choice3} The water type {squirtle} {newL}' )
+    choosePoke = input(f'{choicePrompt} \n {choice1} The grass type {bulbasaur} \n {choice2} The fire type {charmander} \n {choice3} The water type {squirtle} \n' )
     if choosePoke == '1':
         myPokemon = bulbasaur
     elif choosePoke == '2':
@@ -180,7 +181,7 @@ def choosePokemon(myPokemon):
     elif choosePoke == '3':
         myPokemon = squirtle
     time.sleep(1)
-    print(f"You've chosen {myPokemon}{newL}")
+    print(f"You've chosen {myPokemon}\n")
     garyChooses(myPokemon, garyPokemon)
 
 #Choice 2: The Lab
@@ -190,13 +191,13 @@ def lateLabAsh():
     time.sleep(1)
     print(f'Oak: What took you so long, {myName}?!')
     time.sleep(1)
-    print(f"{newL}The three main Pokemon are gone. No more {bulbasaur}, {charmander}, or {squirtle}.")
+    print(f"\nThe three main Pokemon are gone. No more {bulbasaur}, {charmander}, or {squirtle}.")
     time.sleep(2)
     print('\nBut there is another...\n')
     time.sleep(1)
     print(f'All of a sudden, there is a {pikachu} sitting next to you.')
     myPokemon = pikachu
-    input(f"{newL}Press enter to continue...")
+    input(f"\nPress enter to continue...")
     leaveTown(myPokemon)
 
 def lateLab():
@@ -205,17 +206,17 @@ def lateLab():
     time.sleep(1)
     print(f'Oak: What took you so long {myName}!')
     time.sleep(1)
-    print(f"{newL}The three main Pokemon are gone. No more {bulbasaur}, {charmander}, or {squirtle}.")
+    print(f"\nThe three main Pokemon are gone. No more {bulbasaur}, {charmander}, or {squirtle}.")
     time.sleep(2)
-    print(f'{newL}Sorry... You lose.{newL}')
+    print(f'\nSorry... You lose.\n')
     time.sleep(1)
-    input(f"{newL}Press enter to continue...")
+    input(f"\nPress enter to continue...")
     lose()
 
 def labStart():
-    print(f'{newL}You arrive at the lab and find the professor standing with his grandson.{newL}')
+    print(f'\nYou arrive at the lab and find the professor standing with his grandson.\n')
     time.sleep(1)
-    print(f'Gary: Look who finally showed up. Hurry up and choose, {myName}.{newL}')
+    print(f'Gary: Look who finally showed up. Hurry up and choose, {myName}.\n')
     time.sleep(1)
     input(f"Press enter to continue...")
     print("\033[2J\033[0;0H")
@@ -255,7 +256,7 @@ def wakeUp():
 
 def staySleep2():
     print("\033[2J\033[0;0H")
-    wakeUpResponse2 = input(f'{choicePrompt} {newL} {choice1} wake up {newL} {choice2} stay sleeping {newL}' )
+    wakeUpResponse2 = input(f'{choicePrompt} \n {choice1} wake up \n {choice2} stay sleeping \n' )
     if wakeUpResponse2 == '1':
         wakeUp()
     
@@ -269,7 +270,7 @@ def staySleep2():
         print('You spring up from your bed and run to the lab in your pajamas')
         if myName == 'Ash':
             lateLabAsh()
-        if myName != 'Ash':
+        else:
             lateLab()
 
 def staySleep1():
@@ -281,7 +282,7 @@ def staySleep1():
     print('just few more minutes...\n')
     staySleep2()
 
-wakeUpResponse = input(f'{choicePrompt} {newL} {choice1} wake up {newL} {choice2} stay sleeping {newL}' )
+wakeUpResponse = input(f'{choicePrompt} \n {choice1} wake up \n {choice2} stay sleeping \n' )
 if wakeUpResponse == '1':
     wakeUp()
     
@@ -292,7 +293,7 @@ elif wakeUpResponse == '2':
     staySleep1()
 
 
-main()
+# main()
 
 ######################################
 

@@ -5,6 +5,8 @@ import os
 # to get rid of sleep pauses
 # time.sleep = lambda t: None
 
+# `import webbrowser` and `webbrowser.open(url)`
+
 print("\033[2J\033[0;0H")
 print("\t****************************")
 print("\t****************************")

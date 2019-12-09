@@ -36,3 +36,5 @@ to play the game, run:
 
 then deactivate in the console when you are done
 ```deactivate```
+
+[![Run on Repl.it](https://repl.it/badge/github/joncancode/console-adventure)](https://repl.it/github/joncancode/console-adventure)
